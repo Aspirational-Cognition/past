@@ -9,7 +9,7 @@
                 "Media Sharing"
             ],
             "description": "Airsonic is a free, web-based media streamer, providing ubiquitious access to your music. Use it to share your music with friends, or to listen to your own music while at work. You can stream to multiple players simultaneously, for instance to one player in your kitchen and another in your living room.",
-            "note": "Don't forget to create the volume directories on the host file system. 'mkdir -p /opt/airsonic/{config,music,playlists,podcasts,media}'",
+            "note": "<p>Base image documentation at <a href='https://docs.linuxserver.io/images/docker-airsonic-advanced' target='_blank'>Linuxserver.io</a> </p><p>Don't forget to create the volume directories on the host file system.</p><p>'mkdir -p /opt/airsonic/{config,music,playlists,podcasts,media}'</p>",
             "logo": "https://raw.githubusercontent.com/Aspirational-Cognition/past/main/logos/airsonic.png",
             "platform": "linux",
             "repository": {
@@ -93,7 +93,7 @@
                 "API"
             ],
             "description": "Apprise-api ( https://github.com/caronc/apprise-api ) takes advantage of Apprise ( https://github.com/caronc/apprise ) through your network with a user-friendly API. Send notifications to more than 65+ services. An incredibly lightweight gateway to Apprise. A production ready micro-service at your disposal. Apprise API was designed to easily fit into existing (and new) eco-systems that are looking for a simple notification solution.",
-            "note": "Don't forget to create the volume directory on the host file system. 'mkdir -p /opt/apprise-api/config'",
+            "note": "<p>Base image documentation at <a href='https://docs.linuxserver.io/images/docker-apprise-api' target='_blank'>Linuxserver.io</a></p><p>Don't forget to create the volume directories on the host file system.</p><p>'mkdir -p /opt/apprise-api/config}'</p>",
             "logo": "https://raw.githubusercontent.com/caronc/apprise-api/master/apprise_api/static/logo.png",
             "platform": "linux",
             "env": [
@@ -126,6 +126,56 @@
                     "label": "Main port",
                     "default": "8000",
                     "description": "Port to expose on the docker host."
+                }
+            ]
+        },
+        {
+            "type": 3,
+            "title": "BudgE",
+            "name": "BudgE",
+            "categories": [
+                "Finance"
+            ],
+            "description": "BudgE is an open source 'budgeting with envelopes' personal finance app.",
+            "note": "<p>Source repo at <a href='https://github.com/linuxserver/budge' target='_blank'>GitHub</a></p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /opt/budge/{config,data}</p>",
+            "logo": "https://github.com/linuxserver/budge/blob/main/frontend/public/logo192.png",
+            "platform": "linux",
+            "image": "linuxserver/budge:latest",
+            "env": [
+                {
+                    "name": "BUDGE_DATA",
+                    "label": "BUDGE_DATA",
+                    "default": "/opt/budge/data",
+                    "description": "Bind mount for configs."
+                },
+                {
+                    "name": "BUDGE_CONFIG",
+                    "label": "BUDGE_CONFIG",
+                    "default": "/opt/budge/config",
+                    "description": "Bind mount for configs."
+                },
+                {
+                    "name": "MAIN_PORT",
+                    "label": "Main port",
+                    "default": "8090"
+                },
+                {
+                    "name": "PUID",
+                    "label": "PUID",
+                    "default": "1010",
+                    "description": "for UserID"
+                },
+                {
+                    "name": "PGID",
+                    "label": "PGID",
+                    "default": "1010",
+                    "description": "for GroupID"
+                },
+                {
+                    "name": "TZ",
+                    "label": "TZ",
+                    "default": "America/New_York",
+                    "description": "Specify a timezone to use for example America/New_York"
                 }
             ]
         },

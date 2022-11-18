@@ -1,0 +1,17 @@
+version: "3"
+services:
+  budge:
+    restart: unless-stopped
+    image: linuxserver/budge:latest
+    container_name: budge
+    ports:
+      - "${MAIN_PORT}:80"
+      - 3000:3000
+      - 5000:5000
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+    volumes:
+      - ${BUDGE_CONFIG}:/config
+      - ${BUDGE_DATA}:/app
