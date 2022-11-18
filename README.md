@@ -4,6 +4,8 @@
 
 ---
 
+Add to Portainer in "Settings/Application settings/App Templates/URL": https://raw.githubusercontent.com/Aspirational-Cognition/past/main/templates.json
+
 ### Current Categories
 
 | Label | Description |

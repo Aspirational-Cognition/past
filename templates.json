@@ -87,7 +87,7 @@
         },
         {
             "type": 3,
-            "title": "Apprise",
+            "title": "Apprise-api",
             "name": "Apprise",
             "categories": [
                 "API"
