@@ -42,7 +42,7 @@
                 {
                     "name": "CONTEXT_PATH",
                     "label": "CONTEXT_PATH",
-                    "default": "<URL_BASE>",
+                    "default": "/",
                     "description": "For setting url-base in reverse proxy setups."
                 },
                 {
@@ -78,9 +78,8 @@
                 {
                     "name": "JAVA_OPTS",
                     "label": "JAVA_OPTS",
-                    "default": "<options>",
-                    "description": "For passing additional java options.",
-                    "set": "-Xms256m -Xmx512m"
+                    "default": "-Xms256m -Xmx512m",
+                    "description": "For passing additional java options."
                 }
             ]
         },
