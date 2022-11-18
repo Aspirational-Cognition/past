@@ -1,0 +1,20 @@
+version: "3"
+services:
+  app-service:
+    restart: unless-stopped
+    image: linuxserver/airsonic-advanced:latest
+    container_name: airsonic
+    ports:
+      - "${MAIN_PORT}:4040"
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+      CONTEXT_PATH: ${CONTEXT_PATH}
+      JAVA_OPTS: ${JAVA_OPTS}
+    volumes:
+      - ${AIRSONIC_CONFIG}:/config
+      - ${AIRSONIC_MUSIC}:/music
+      - ${AIRSONIC_PLAYLISTS}:/playlists
+      - ${AIRSONIC_PODCASTS}:/podcasts
+      - ${AIRSONIC_MEDIA}:/media

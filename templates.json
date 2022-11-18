@@ -1,0 +1,179 @@
+{
+    "version": "2",
+    "templates": [
+        {
+            "type": 3,
+            "title": "Airsonic",
+            "name": "Airsonic",
+            "categories": [
+                "Media Sharing"
+            ],
+            "description": "Airsonic is a free, web-based media streamer, providing ubiquitious access to your music. Use it to share your music with friends, or to listen to your own music while at work. You can stream to multiple players simultaneously, for instance to one player in your kitchen and another in your living room.",
+            "logo": "https://budibase.com/favicon.ico",
+            "platform": "linux",
+            "repository": {
+                "url": "https://github.com/Aspirational-Cognition/past",
+                "stackfile": "stackfiles/airsonic/docker-compose.yaml"
+            },
+            "env": [
+                {
+                    "name": "PUID",
+                    "label": "PUID",
+                    "default": "1010",
+                    "preset": true
+                },
+                {
+                    "name": "PGID",
+                    "label": "PGID",
+                    "default": "1010",
+                    "preset": true
+                },
+                {
+                    "name": "TZ",
+                    "label": "TZ",
+                    "default": "America/New_York",
+                    "preset": true
+                },
+                {
+                    "name": "MAIN_PORT",
+                    "label": "Main port",
+                    "default": "4040"
+                },
+                {
+                    "name": "CONTEXT_PATH",
+                    "label": "CONTEXT_PATH",
+                    "default": "<URL_BASE>",
+                    "description": "For setting url-base in reverse proxy setups."
+                },
+                {
+                    "name": "AIRSONIC_CONFIG",
+                    "label": "AIRSONIC_CONFIG",
+                    "default": "/opt/airsonic/config",
+                    "description": "Bind mount for configs."
+                },
+                {
+                    "name": "AIRSONIC_MUSIC",
+                    "label": "AIRSONIC_MUSIC",
+                    "default": "/opt/airsonic/music",
+                    "description": "Bind mount for music."
+                },
+                {
+                    "name": "AIRSONIC_PLAYLISTS",
+                    "label": "AIRSONIC_PLAYLISTS",
+                    "default": "/opt/airsonic/playlists",
+                    "description": "Bind mount for configs."
+                },
+                {
+                    "name": "AIRSONIC_PODCASTS",
+                    "label": "AIRSONIC_PODCASTS",
+                    "default": "/opt/airsonic/playlists",
+                    "description": "Bind mount for playlists."
+                },
+                {
+                    "name": "AIRSONIC_MEDIA",
+                    "label": "AIRSONIC_MEDIA",
+                    "default": "/opt/airsonic/media",
+                    "description": "Bind mount for media."
+                },
+                {
+                    "name": "JAVA_OPTS",
+                    "label": "JAVA_OPTS",
+                    "default": "<options>",
+                    "description": "For passing additional java options.",
+                    "set": "-Xms256m -Xmx512m"
+                }
+            ]
+        },
+        {
+            "type": 3,
+            "title": "Budibase",
+            "categories": [
+                "Developer Tools"
+            ],
+            "description": "Build modern business apps in minutes",
+            "logo": "https://budibase.com/favicon.ico",
+            "platform": "linux",
+            "repository": {
+                "url": "https://github.com/Aspirational-Cognition/past",
+                "stackfile": "stackfiles/budibase/docker-compose.yaml"
+            },
+            "env": [
+                {
+                    "name": "MAIN_PORT",
+                    "label": "Main port",
+                    "default": "10000"
+                },
+                {
+                    "name": "JWT_SECRET",
+                    "label": "JWT secret",
+                    "default": "change-me"
+                },
+                {
+                    "name": "MINIO_ACCESS_KEY",
+                    "label": "MinIO access key",
+                    "default": "change-me"
+                },
+                {
+                    "name": "MINIO_SECRET_KEY",
+                    "label": "MinIO secret key",
+                    "default": "change-me"
+                },
+                {
+                    "name": "COUCH_DB_USER",
+                    "default": "budibase",
+                    "preset": true
+                },
+                {
+                    "name": "COUCH_DB_PASSWORD",
+                    "label": "Couch DB password",
+                    "default": "change-me"
+                },
+                {
+                    "name": "REDIS_PASSWORD",
+                    "label": "Redis password",
+                    "default": "change-me"
+                },
+                {
+                    "name": "INTERNAL_API_KEY",
+                    "label": "Internal API key",
+                    "default": "change-me"
+                },
+                {
+                    "name": "APP_PORT",
+                    "default": "4002",
+                    "preset": true
+                },
+                {
+                    "name": "WORKER_PORT",
+                    "default": "4003",
+                    "preset": true
+                },
+                {
+                    "name": "MINIO_PORT",
+                    "default": "4004",
+                    "preset": true
+                },
+                {
+                    "name": "COUCH_DB_PORT",
+                    "default": "4005",
+                    "preset": true
+                },
+                {
+                    "name": "REDIS_PORT",
+                    "default": "6379",
+                    "preset": true
+                },
+                {
+                    "name": "WATCHTOWER_PORT",
+                    "default": "6161",
+                    "preset": true
+                },
+                {
+                    "name": "BUDIBASE_ENVIRONMENT",
+                    "default": "PRODUCTION",
+                    "preset": true
+                }
+            ]
+        }
+    ]
+}
