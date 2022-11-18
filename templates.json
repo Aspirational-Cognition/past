@@ -140,7 +140,6 @@
             "note": "<p>Source repo at <a href='https://github.com/linuxserver/budge' target='_blank'>GitHub</a></p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /opt/budge/{config,data}</p>",
             "logo": "https://github.com/linuxserver/budge/blob/main/frontend/public/logo192.png",
             "platform": "linux",
-            "image": "linuxserver/budge:latest",
             "env": [
                 {
                     "name": "BUDGE_DATA",
