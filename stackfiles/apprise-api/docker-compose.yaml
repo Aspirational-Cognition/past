@@ -1,0 +1,14 @@
+version: "3"
+services:
+  apprise-api:
+    restart: unless-stopped
+    image: linuxserver/apprise-api:latest
+    container_name: apprise-api
+    ports:
+      - "${MAIN_PORT}:8000"
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+    volumes:
+      - ${APPRISE_API_CONFIG}:/config
