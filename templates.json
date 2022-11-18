@@ -20,24 +20,25 @@
                     "name": "PUID",
                     "label": "PUID",
                     "default": "1010",
-                    "preset": true
+                    "description": "Linux user id, set for proper filesystem access."
                 },
                 {
                     "name": "PGID",
                     "label": "PGID",
                     "default": "1010",
-                    "preset": true
+                    "description": "Linux group id, set for proper filesystem access."
                 },
                 {
                     "name": "TZ",
                     "label": "TZ",
                     "default": "America/New_York",
-                    "preset": true
+                    "description": "Default timezone."
                 },
                 {
                     "name": "MAIN_PORT",
                     "label": "Main port",
-                    "default": "4040"
+                    "default": "4040",
+                    "description": "Port to expose on the docker host."
                 },
                 {
                     "name": "CONTEXT_PATH",
